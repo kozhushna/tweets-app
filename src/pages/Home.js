@@ -4,6 +4,7 @@ const Home = () => {
       <section>
         <div>
           <h1>Welcome to Tweets</h1>
+          <h2>Tweets</h2>
         </div>
       </section>
     </main>
