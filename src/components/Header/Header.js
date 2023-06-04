@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import Logo from '../../images/logo.png';
 import css from '../App/App.module.css';
 import headerCss from './Header.module.css';
 
@@ -8,16 +9,24 @@ const Header = () => {
     <>
       <header>
         <div className={css.container}>
-          <nav className={headerCss.header}>
-            <ul className={headerCss.navList}>
-              <li className={headerCss.navLink}>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li className={headerCss.navLink}>
-                <NavLink to="/tweets">Tweets</NavLink>
-              </li>
-            </ul>
-          </nav>
+          <div className={headerCss.menuHolder}>
+            <img
+              src={Logo}
+              alt="tweets"
+              className={headerCss.logo}
+              width="40px"
+            />
+            <nav>
+              <ul className={headerCss.navList}>
+                <li>
+                  <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/tweets">Tweets</NavLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </header>
       <Suspense>
