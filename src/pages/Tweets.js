@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getUsers } from '../services/user-service';
 import UserList from '../components/UserList/UserList';
 import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
+import Loader from '../components/Loader/Loader';
 
 const Tweets = () => {
   const [users, setUsers] = useState([]);
@@ -40,6 +41,7 @@ const Tweets = () => {
       <section>
         <div>
           <UserList users={users} />
+          {isLoading && <Loader />}
           {showLoadMoreBtn && <LoadMoreButton onClick={loadMore} />}
         </div>
       </section>
