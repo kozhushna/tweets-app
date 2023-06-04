@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://64664418ba7110b6639c25a1.mockapi.io/api/v1';
 
-const getUsers = async (page, pageSize) => {
+export const getUsers = async (page, pageSize) => {
   const response = await axios.get('/users', {
     params: {
       page: page,
@@ -14,5 +14,3 @@ const getUsers = async (page, pageSize) => {
     total: 20,
   };
 };
-
-export default getUsers;
