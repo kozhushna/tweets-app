@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const UserListItem = ({ user, isFollowing, onClick }) => {
   const { id, avatar, name, tweets, followers } = user;
+  const formatter = new Intl.NumberFormat('en-US');
 
   //   const dispatch = useDispatch();
   //   const handleDelete = () => dispatch(deleteContact(id));
@@ -11,7 +12,7 @@ const UserListItem = ({ user, isFollowing, onClick }) => {
     <li>
       <img src={avatar} alt={name} />
       <p>{tweets} tweets</p>
-      <p>{followers} followers</p>
+      <p>{formatter.format(followers)} followers</p>
       <button
         type="button"
         onClick={() => onClick(id, isFollowing ? followers - 1 : followers + 1)}
