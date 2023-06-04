@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getUsers } from '../services/user-service';
+import { getUsers, updateFollows } from '../services/user-service';
 import UserList from '../components/UserList/UserList';
 import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
 import Loader from '../components/Loader/Loader';
@@ -34,13 +34,31 @@ const Tweets = () => {
     setPage(prevPage => prevPage + 1);
   };
 
-  if (error) return <div>{error}</div>;
+  const updateFollowing = async (id, value) => {
+    try {
+      // setIsLoading(true);
+      const data = await updateFollows(id, value);
+      const newState = [...users];
+      const index = newState.findIndex(user => user.id === id);
+      newState[index] = data;
+      setUsers(newState);
+      return true;
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      //setIsLoading(false);
+    }
+    return false;
+  };
+
+  // if (error) return <div>{error}</div>;
 
   return (
     <main>
       <section>
         <div>
-          <UserList users={users} />
+          <UserList users={users} updateFollowing={updateFollowing} />
+          {error && <div>{error}</div>}
           {isLoading && <Loader />}
           {showLoadMoreBtn && <LoadMoreButton onClick={loadMore} />}
         </div>

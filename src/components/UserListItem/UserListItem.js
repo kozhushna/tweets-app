@@ -1,7 +1,8 @@
 // import { useDispatch } from 'react-redux';
+// import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const UserListItem = ({ user }) => {
+const UserListItem = ({ user, isFollowing, onClick }) => {
   const { id, avatar, name, tweets, followers } = user;
 
   //   const dispatch = useDispatch();
@@ -11,17 +12,22 @@ const UserListItem = ({ user }) => {
       <img src={avatar} alt={name} />
       <p>{tweets} tweets</p>
       <p>{followers} followers</p>
-
-      <button type="button">Follow</button>
+      <button
+        type="button"
+        onClick={() => onClick(id, isFollowing ? followers - 1 : followers + 1)}
+      >
+        {isFollowing ? <>Following</> : <>Follow</>}
+      </button>
     </li>
   );
 };
 
 UserListItem.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  tweets: PropTypes.number.isRequired,
-  followers: PropTypes.number.isRequired,
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  tweets: PropTypes.number,
+  followers: PropTypes.number,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default UserListItem;
