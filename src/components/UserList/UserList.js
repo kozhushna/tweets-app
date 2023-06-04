@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import UserListItem from '../UserListItem/UserListItem';
+import css from './UserList.module.css';
 
 const UserList = ({ users, updateFollowing }) => {
   const [followerIds, setFollowerIds] = useState(() => {
@@ -24,7 +25,7 @@ const UserList = ({ users, updateFollowing }) => {
   };
 
   return (
-    <ul>
+    <ul className={css.list}>
       {users.map(user => {
         return (
           <UserListItem
