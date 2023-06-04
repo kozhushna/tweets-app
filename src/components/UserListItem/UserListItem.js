@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const UserListItem = ({ user, isFollowing, onClick }) => {
   const { id, avatar, name, tweets, followers } = user;
   const formatter = new Intl.NumberFormat('en-US');
-
+  //   const images = require.context('../../images', true);
   //   const dispatch = useDispatch();
   //   const handleDelete = () => dispatch(deleteContact(id));
   return (
