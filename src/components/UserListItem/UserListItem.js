@@ -35,7 +35,7 @@ const UserListItem = ({ user, isFollowing, onClick }) => {
       <button
         type="button"
         onClick={() => onClick(id, isFollowing ? followers - 1 : followers + 1)}
-        className={css.button}
+        className={isFollowing ? css.button : css.buttonFollow}
       >
         {isFollowing ? <>Following</> : <>Follow</>}
       </button>
