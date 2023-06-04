@@ -5,6 +5,8 @@ import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
 import Loader from '../components/Loader/Loader';
 import GoBackButton from '../components/GoBackButton/GoBackButton';
 
+import css from '../components/App/App.module.css';
+
 const Tweets = () => {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState('');
@@ -37,7 +39,6 @@ const Tweets = () => {
 
   const updateFollowing = async (id, value) => {
     try {
-      // setIsLoading(true);
       const data = await updateFollows(id, value);
       const newState = [...users];
       const index = newState.findIndex(user => user.id === id);
@@ -46,18 +47,14 @@ const Tweets = () => {
       return true;
     } catch (error) {
       setError(error.message);
-    } finally {
-      //setIsLoading(false);
     }
     return false;
   };
 
-  // if (error) return <div>{error}</div>;
-
   return (
     <main>
       <section>
-        <div>
+        <div className={css.container}>
           <GoBackButton path={'/'}>Go back</GoBackButton>
           <UserList users={users} updateFollowing={updateFollowing} />
           {error && <div>{error}</div>}

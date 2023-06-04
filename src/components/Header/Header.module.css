@@ -1,0 +1,17 @@
+.navList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.header {
+  padding: 15px;
+  height: 50px;
+  background-color: #471ca9;
+  border-radius: 4px;
+}
+
+.navLink {
+  color: #ffffff;
+}
