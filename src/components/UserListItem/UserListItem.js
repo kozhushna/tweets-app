@@ -9,7 +9,7 @@ const UserListItem = ({ user, isFollowing, onClick }) => {
 
   return (
     <li className={css.item}>
-      <img src={cardImage} alt={'background'} />
+      <img src={cardImage} alt={'background'} className={css.cardImage} />
       <img
         src={logo}
         alt={'logo Go It'}
@@ -28,11 +28,14 @@ const UserListItem = ({ user, isFollowing, onClick }) => {
         />
       </div>
 
-      <p>{tweets} tweets</p>
-      <p>{formatter.format(followers)} followers</p>
+      <p className={css.tweetsText}>{tweets} tweets</p>
+      <p className={css.followersText}>
+        {formatter.format(followers)} followers
+      </p>
       <button
         type="button"
         onClick={() => onClick(id, isFollowing ? followers - 1 : followers + 1)}
+        className={css.button}
       >
         {isFollowing ? <>Following</> : <>Follow</>}
       </button>
