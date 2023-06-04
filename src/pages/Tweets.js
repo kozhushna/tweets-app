@@ -3,6 +3,7 @@ import { getUsers, updateFollows } from '../services/user-service';
 import UserList from '../components/UserList/UserList';
 import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
 import Loader from '../components/Loader/Loader';
+import GoBackButton from '../components/GoBackButton/GoBackButton';
 
 const Tweets = () => {
   const [users, setUsers] = useState([]);
@@ -57,6 +58,7 @@ const Tweets = () => {
     <main>
       <section>
         <div>
+          <GoBackButton path={'/'}>Go back</GoBackButton>
           <UserList users={users} updateFollowing={updateFollowing} />
           {error && <div>{error}</div>}
           {isLoading && <Loader />}
