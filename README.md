@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+## User Tweet Cards Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React project showcases a user tweet card application with interactive
+features. Users can subscribe and unsubscribe from following other user's
+tweets. The project includes two pages: Home and Tweets.
 
-## Available Scripts
+### Home Page
 
-In the project directory, you can run:
+The Home page displays a warm greeting and serves as the entry point to the
+application. ![Home page](./assets/home.png)
 
-### `npm start`
+### Tweets Page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Tweets page presents the user's tweets and provides the following
+functionality:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Interactive buttons to subscribe and unsubscribe from a user's tweet updates.
+- The ability to filter tweets based on the subscription status.
+- A Back button that allows users to navigate back to the Home page.
+  ![Tweets page](./assets/tweets.png)
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd user-tweet-cards`
+3. Install the dependencies: `npm install`
 
-### `npm run build`
+### Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Start the development server: `npm start`
+2. Open your browser and visit `http://localhost:3000` to access the
+   application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Feel free to explore the different features and interact with the user tweet
+cards!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Technologies Used
 
-### `npm run eject`
+- React
+- JS
+- HTML
+- CSS
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Credits
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project was developed as part of a React application showcase. It
+demonstrates frontend development skills and the implementation of interactive
+features.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For more information, please refer to the source code.

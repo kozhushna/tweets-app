@@ -57,7 +57,6 @@ const Tweets = () => {
 
   const onFilterChanged = value => {
     setSelectedFilter(value);
-    console.log(value);
   };
 
   const filterUsers = () => {
