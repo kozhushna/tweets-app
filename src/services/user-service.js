@@ -11,7 +11,7 @@ export const getUsers = async (page, pageSize) => {
   });
   return {
     users: response.data,
-    total: 20,
+    total: 30,
   };
 };
 

@@ -9,12 +9,14 @@ import GoBackButton from '../components/GoBackButton/GoBackButton';
 import css from '../components/App/App.module.css';
 import tweetsCss from './Tweets.module.css';
 import 'react-toastify/dist/ReactToastify.css';
+import Filter from '../components/Filter/Filter';
 
 const Tweets = () => {
   const [users, setUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState('');
   const PAGE_SIZE = 6;
 
   useEffect(() => {
@@ -53,6 +55,27 @@ const Tweets = () => {
     return false;
   };
 
+  const onFilterChanged = value => {
+    setSelectedFilter(value);
+    console.log(value);
+  };
+
+  const filterUsers = () => {
+    if (!selectedFilter) {
+      return users;
+    }
+    const followerIds = JSON.parse(localStorage.getItem('followerIds')) ?? [];
+    if (followerIds.length === 0) {
+      return selectedFilter === 'followings' ? [] : users;
+    }
+
+    return users.filter(
+      user =>
+        (selectedFilter === 'followings' && followerIds.includes(user.id)) ||
+        (selectedFilter === 'follow' && !followerIds.includes(user.id))
+    );
+  };
+
   return (
     <main>
       <section className={tweetsCss.section}>
@@ -60,7 +83,8 @@ const Tweets = () => {
           <h2 className={tweetsCss.visuallyHidden}>Tweets</h2>
           <ToastContainer autoClose={2500} />
           <GoBackButton path={'/'}>Go back</GoBackButton>
-          <UserList users={users} updateFollowing={updateFollowing} />
+          <Filter onFilterChanged={onFilterChanged} />
+          <UserList users={filterUsers()} updateFollowing={updateFollowing} />
           {isLoading && <Loader />}
           {showLoadMoreBtn && <LoadMoreButton onClick={loadMore} />}
         </div>
