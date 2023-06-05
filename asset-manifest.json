@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/tweets-app/static/css/main.6e4ebb12.css",
-    "main.js": "/tweets-app/static/js/main.b142f070.js",
+    "main.js": "/tweets-app/static/js/main.d53d90a3.js",
     "static/css/983.2238c26c.chunk.css": "/tweets-app/static/css/983.2238c26c.chunk.css",
     "static/js/983.99cfba39.chunk.js": "/tweets-app/static/js/983.99cfba39.chunk.js",
     "static/css/352.333b9213.chunk.css": "/tweets-app/static/css/352.333b9213.chunk.css",
-    "static/js/352.684a9ebb.chunk.js": "/tweets-app/static/js/352.684a9ebb.chunk.js",
+    "static/js/352.1351b8f1.chunk.js": "/tweets-app/static/js/352.1351b8f1.chunk.js",
     "static/css/253.f5361c8b.chunk.css": "/tweets-app/static/css/253.f5361c8b.chunk.css",
     "static/js/253.3240d239.chunk.js": "/tweets-app/static/js/253.3240d239.chunk.js",
     "static/media/logo.png": "/tweets-app/static/media/logo.0cb3c0e2ff19b181affc.png",
@@ -50,16 +50,16 @@
     "static/media/go-it.svg": "/tweets-app/static/media/go-it.89604f2827917106f320d36dad457a91.svg",
     "index.html": "/tweets-app/index.html",
     "main.6e4ebb12.css.map": "/tweets-app/static/css/main.6e4ebb12.css.map",
-    "main.b142f070.js.map": "/tweets-app/static/js/main.b142f070.js.map",
+    "main.d53d90a3.js.map": "/tweets-app/static/js/main.d53d90a3.js.map",
     "983.2238c26c.chunk.css.map": "/tweets-app/static/css/983.2238c26c.chunk.css.map",
     "983.99cfba39.chunk.js.map": "/tweets-app/static/js/983.99cfba39.chunk.js.map",
     "352.333b9213.chunk.css.map": "/tweets-app/static/css/352.333b9213.chunk.css.map",
-    "352.684a9ebb.chunk.js.map": "/tweets-app/static/js/352.684a9ebb.chunk.js.map",
+    "352.1351b8f1.chunk.js.map": "/tweets-app/static/js/352.1351b8f1.chunk.js.map",
     "253.f5361c8b.chunk.css.map": "/tweets-app/static/css/253.f5361c8b.chunk.css.map",
     "253.3240d239.chunk.js.map": "/tweets-app/static/js/253.3240d239.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6e4ebb12.css",
-    "static/js/main.b142f070.js"
+    "static/js/main.d53d90a3.js"
   ]
 }
