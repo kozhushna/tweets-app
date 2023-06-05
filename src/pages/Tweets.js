@@ -57,6 +57,7 @@ const Tweets = () => {
     <main>
       <section className={tweetsCss.section}>
         <div className={css.container}>
+          <h2 className={tweetsCss.visuallyHidden}>Tweets</h2>
           <ToastContainer autoClose={2500} />
           <GoBackButton path={'/'}>Go back</GoBackButton>
           <UserList users={users} updateFollowing={updateFollowing} />
