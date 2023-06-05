@@ -12,15 +12,19 @@ const UserList = ({ users, updateFollowing }) => {
   }, [followerIds]);
 
   const hasFollowerId = id => followerIds.includes(id);
+  const updateFollowerIds = id => {
+    setFollowerIds(prevState =>
+      prevState.includes(id)
+        ? prevState.filter(item => item !== id)
+        : [...prevState, id]
+    );
+  };
 
   const followingChanged = async (id, isFollowing) => {
+    updateFollowerIds(id);
     const result = await updateFollowing(id, isFollowing);
-    if (result) {
-      setFollowerIds(prevState =>
-        prevState.includes(id)
-          ? prevState.filter(item => item !== id)
-          : [...prevState, id]
-      );
+    if (!result) {
+      updateFollowerIds(id);
     }
   };
 
