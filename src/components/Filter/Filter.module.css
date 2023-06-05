@@ -1,0 +1,19 @@
+.dropdown {
+  margin-right: 15px;
+}
+
+.dropdownSelect {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark-violet);
+}
+
+.dropdownOption {
+  padding: 8px;
+  cursor: pointer;
+}

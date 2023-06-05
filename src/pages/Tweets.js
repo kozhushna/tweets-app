@@ -82,8 +82,12 @@ const Tweets = () => {
         <div className={css.container}>
           <h2 className={tweetsCss.visuallyHidden}>Tweets</h2>
           <ToastContainer autoClose={2500} />
-          <GoBackButton path={'/'}>Go back</GoBackButton>
-          <Filter onFilterChanged={onFilterChanged} />
+
+          <div className={tweetsCss.topLine}>
+            <GoBackButton path={'/'}>Go back</GoBackButton>
+            <Filter onFilterChanged={onFilterChanged} />
+          </div>
+
           <UserList users={filterUsers()} updateFollowing={updateFollowing} />
           {isLoading && <Loader />}
           {showLoadMoreBtn && <LoadMoreButton onClick={loadMore} />}

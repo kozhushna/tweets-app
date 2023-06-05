@@ -1,17 +1,25 @@
 import PropTypes from 'prop-types';
+import css from './Filter.module.css';
 
 const Filter = ({ onFilterChanged }) => {
   const handleSelectChange = event => {
     const value = event.target.value;
+
     onFilterChanged(value);
   };
 
   return (
-    <div>
-      <select onChange={handleSelectChange}>
-        <option value="">Show all</option>
-        <option value="follow">Follow</option>
-        <option value="followings">Followings</option>
+    <div className={css.dropdown}>
+      <select onChange={handleSelectChange} className={css.dropdownSelect}>
+        <option value="" className={css.dropdownOption}>
+          Show all
+        </option>
+        <option value="follow" className={css.dropdownOption}>
+          Follow
+        </option>
+        <option value="followings" className={css.dropdownOption}>
+          Followings
+        </option>
       </select>
     </div>
   );
