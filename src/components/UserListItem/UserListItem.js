@@ -28,7 +28,7 @@ const UserListItem = ({ user, isFollowing, onClick }) => {
         />
       </div>
 
-      <p className={css.tweetsText}>{tweets} tweets</p>
+      <p className={css.tweetsText}>{formatter.format(tweets)} tweets</p>
       <p className={css.followersText}>
         {formatter.format(followers)} followers
       </p>
