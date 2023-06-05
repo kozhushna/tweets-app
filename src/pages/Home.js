@@ -5,7 +5,7 @@ import homeCss from './Home.module.css';
 const Home = () => {
   return (
     <main>
-      <section>
+      <section className={homeCss.section}>
         <div className={css.container}>
           <h1 className={homeCss.title}>Welcome to Tweets</h1>
           <img src={Hero} alt="tweets" className={homeCss.image} />

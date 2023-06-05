@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 import { getUserById, getUsers, updateFollows } from '../services/user-service';
 import UserList from '../components/UserList/UserList';
 import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
@@ -6,12 +7,12 @@ import Loader from '../components/Loader/Loader';
 import GoBackButton from '../components/GoBackButton/GoBackButton';
 
 import css from '../components/App/App.module.css';
+import tweetsCss from './Tweets.module.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Tweets = () => {
   const [users, setUsers] = useState([]);
-  const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  // const [totalUsers, setTotalUsers] = useState(0);
   const [page, setPage] = useState(1);
   const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(false);
   const PAGE_SIZE = 6;
@@ -22,10 +23,9 @@ const Tweets = () => {
       try {
         const data = await getUsers(page, PAGE_SIZE);
         setUsers(prevState => [...prevState, ...data.users]);
-        // setTotalUsers(data.total);
         setShowLoadMoreBtn(page < Math.ceil(data.total / PAGE_SIZE));
       } catch (error) {
-        setError(error.message);
+        toast.error(error.massage);
       } finally {
         setIsLoading(false);
       }
@@ -40,10 +40,6 @@ const Tweets = () => {
   const updateFollowing = async (id, isFollowing) => {
     try {
       const user = await getUserById(id);
-      if (!user) {
-        //toster 'This user does not exists.'
-        return false;
-      }
       const follows = isFollowing ? user.followers - 1 : user.followers + 1;
       const data = await updateFollows(id, follows);
       const newState = [...users];
@@ -52,18 +48,18 @@ const Tweets = () => {
       setUsers(newState);
       return true;
     } catch (error) {
-      setError(error.message);
+      toast.error(error.message);
     }
     return false;
   };
 
   return (
     <main>
-      <section>
+      <section className={tweetsCss.section}>
         <div className={css.container}>
+          <ToastContainer autoClose={2500} />
           <GoBackButton path={'/'}>Go back</GoBackButton>
           <UserList users={users} updateFollowing={updateFollowing} />
-          {error && <div>{error}</div>}
           {isLoading && <Loader />}
           {showLoadMoreBtn && <LoadMoreButton onClick={loadMore} />}
         </div>
