@@ -1,11 +1,12 @@
 a.link {
   width: 100px;
   margin-left: 15px;
-  color: #471ca9;
+  color: var(--dark-violet);
   font-weight: 700;
+  transition: color var(--base-transition);
 }
 
 a.link:hover,
 a.link:focus {
-  color: #9d98c9;
+  color: var(--light-violet);
 }

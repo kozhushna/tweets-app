@@ -82,27 +82,28 @@
 .buttonFollow {
   width: 196px;
   height: 50px;
-  background: #5cd3a8;
+  background: var(--button-green);
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.2;
   text-transform: uppercase;
-  color: #373737;
+  color: var(--text-color);
   cursor: pointer;
+  transition: all var(--base-transition);
 }
 
 .button:hover,
 .button:focus {
-  background: #2aa175;
+  background: var(--button-green-hover);
 }
 
 .buttonFollow {
-  background: #ebd8ff;
+  background: var(--button-violet);
 }
 
 .buttonFollow:hover,
 .buttonFollow:focus {
-  background: #c4b0da;
+  background: var(--button-violet-hover);
 }

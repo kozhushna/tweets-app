@@ -9,6 +9,6 @@
 .menuHolder {
   padding: 15px;
   height: 50px;
-  background-color: #471ca9;
+  background-color: var(--dark-violet);
   border-radius: 4px;
 }
