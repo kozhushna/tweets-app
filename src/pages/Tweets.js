@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getUsers, updateFollows } from '../services/user-service';
+import { getUserById, getUsers, updateFollows } from '../services/user-service';
 import UserList from '../components/UserList/UserList';
 import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
 import Loader from '../components/Loader/Loader';
@@ -37,9 +37,15 @@ const Tweets = () => {
     setPage(prevPage => prevPage + 1);
   };
 
-  const updateFollowing = async (id, value) => {
+  const updateFollowing = async (id, isFollowing) => {
     try {
-      const data = await updateFollows(id, value);
+      const user = await getUserById(id);
+      if (!user) {
+        //toster 'This user does not exists.'
+        return false;
+      }
+      const follows = isFollowing ? user.followers - 1 : user.followers + 1;
+      const data = await updateFollows(id, follows);
       const newState = [...users];
       const index = newState.findIndex(user => user.id === id);
       newState[index] = data;

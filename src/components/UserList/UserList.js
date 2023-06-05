@@ -13,8 +13,8 @@ const UserList = ({ users, updateFollowing }) => {
 
   const hasFollowerId = id => followerIds.includes(id);
 
-  const followingChanged = async (id, value) => {
-    const result = await updateFollowing(id, value);
+  const followingChanged = async (id, isFollowing) => {
+    const result = await updateFollowing(id, isFollowing);
     if (result) {
       setFollowerIds(prevState =>
         prevState.includes(id)
